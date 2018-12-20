@@ -1,7 +1,7 @@
 const Component = require("../mongodb/db").Component
 
 module.exports = {
-    getComponents: function(tagName) {
+    async getComponents(tagName) {
         const query = {}
         if (tagName) {
             query.tagName = tagName
@@ -11,16 +11,28 @@ module.exports = {
             .sort({ _id: 1 })
             .exec()
     },
-    getComponentByName: function(name) {
+    async getComponentByName(name, tagName) {
         const query = {}
         if (name) {
             query.name = name
+        }
+        if (tagName) {
+            query.tagName = tagName
         }
         return Component
             .findOne(query)
             .exec()
     },
-    addComponent: function(data) {
+    async getComponentById(_id) {
+        const query = {}
+        if (_id) {
+            query._id = _id
+        }
+        return Component
+            .findOne(query)
+            .exec()
+    },
+    async addComponent(data) {
         return Component.create(data).exec()
     }
 }

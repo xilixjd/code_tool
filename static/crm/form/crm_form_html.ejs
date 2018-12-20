@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title><%= fileName %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//es-static.xiaojukeji.com/static/web/crm/styles/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="//es-static.xiaojukeji.com/static/web/crm/js/controls/datepicker/datepicker.css" rel="stylesheet" type="text/css">
+    <link href="//es-static.xiaojukeji.com/static/web/crm/styles/animate.css" rel="stylesheet" type="text/css">
+    <link href="//es-static.xiaojukeji.com/static/web/crm/styles/style.css" rel="stylesheet" type="text/css">
+    <link href="//es-static.xiaojukeji.com/static/web/crm/styles/custom.css" rel="stylesheet" type="text/css">
+    <link href="//es-static.xiaojukeji.com/static/web/crm/styles/invoicelist.css" rel="stylesheet" type="text/css">
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+<script>
+   var Omega = Omega || {
+     productName: 'omegadf4e1b8bab'
+   };
+   window.Omega = Omega;
+ </script>
+</head>
+<body>
+    <div class="wrapper animated fadeInRight">
+        <div class="ibox">
+            <div class="ibox-content">
+                <form class="form-horizontal asynForm" id="<%= fileName %>Form" error-wrap=".error-wrap" action="javascript:void(0);" isRefresh="false">
+                    <div id="<%= fileName %>">
+                        <!-- <div class="form-group" id="divCanApplyAmount">
+                            <label for="canApplyAmount" class="col-sm-3 control-label">企业可开票金额：</label>
+                            <span class="col-sm-3 control-label" id="canApplyAmount"></span>
+                        </div> -->
+                        <%- formQueryHtml %>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input id="intputSubmit" dialog-width="50%" dialog-height="80%" type="button" class="btn btn-blue btn-w-m m-l-xl" value="提 交">
+                            <input id="inputBack" type="button" class="btn btn-white btn-w-m m-l-xl cancel" value="返 回">
+                            <span class="error-wrap"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="//es-static.xiaojukeji.com/static/web/crm/js/require-jquery.js"></script>
+<script src="//es-static.xiaojukeji.com/static/web/crm/js/controls/modernizr.js"></script>
+<script src="//es-static.xiaojukeji.com/static/web/crm/js/controls/dialogplugin/dialog.js?skin=default"></script>
+<script src="//es-static.xiaojukeji.com/static/web/crm/js/controls/dialogplugin/dialog-iframe.js"></script>
+<script src="//es-static.xiaojukeji.com/static/web/crm/js/util/dialoglink.js"></script>
+<script src="//es-static.xiaojukeji.com/static/web/crm/js/util/asynplugin.js"></script>
+
+<script>
+    $.ajax({
+        url:"//es-static.xiaojukeji.com/static/web/crm/js/configure.js",
+        cache:false,
+        dataType:'script',
+        success:function(){
+            require(["<%= fileName %>"]);
+        }
+    })
+</script>
+</body>
+</html>

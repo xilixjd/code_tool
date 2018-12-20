@@ -21,11 +21,11 @@ exports.Component = mongolass.model("Component", {
 exports.History = mongolass.model("History", {
     name: { type: "string", required: true },
     author: { type: "string", required: true },
-    component: { type: "string", required: true },
+    componentName: { type: "string", required: true },
+    tagName: { type: "string", required: true },
     // 选项，暂时的想法是，把前端的请求都接收过来放到一个字段
     // 后端根据该字段做特定的处理
     // 因为这一块的数据表结构还没想好怎么设计
-    option: { type: "string", required: false },
+    field: { type: "string", required: false },
+    createTime: { type: "string", required: false },
 })
-// 索引、唯一性
-exports.History.index({ name: 1 }, { unique: true }).exec()

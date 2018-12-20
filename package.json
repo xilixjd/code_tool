@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "config-lite": "^2.1.0",
+    "ejs": "^2.6.1",
     "express": "^4.14.0",
     "mongolass": "^4.4.0"
   }
