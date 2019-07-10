@@ -2,7 +2,7 @@
 require(['util/mpi', 'util/util', 'util/formUtil', 'controls/underscore', 'controls/jquery.datetimepicker', 'controls/switch/bootstrap-switch.min', 'controls/validform', 'controls/rePage', 'util/ajaxData', 'util/forMatData', 'controls/xdate', 'controls/bootstrap.min'], function(mpi, util) {
     var mapCacheState = {};
     mpi.config({
-        'search': '<%= requestUrl %>', // 获取列表
+        'search': '/bill/cycle/getWriteOffLogList', // 获取列表
     });
 
     /**
@@ -18,7 +18,7 @@ require(['util/mpi', 'util/util', 'util/formUtil', 'controls/underscore', 'contr
                  * @return {object}          api对象
                  */
                 getList: function(pageNum, successCallBack) {
-                    var data = _.extend({}, getJqueryObject('<%= fileName %>Form').getJsonData(), {
+                    var data = _.extend({}, getJqueryObject('pressMoneyListTransDetailForm').getJsonData(), {
                         pageNum: pageNum || 1,
                         pageSize: 10
                     })
@@ -80,7 +80,7 @@ require(['util/mpi', 'util/util', 'util/formUtil', 'controls/underscore', 'contr
         })
         api.getList(num, renderTable)
         $('[component="switch"]').bootstrapSwitch()
-        mapCacheState['resetData'] = getJqueryObject('<%= fileName %>Form').getJsonData()
+        mapCacheState['resetData'] = getJqueryObject('pressMoneyListTransDetailForm').getJsonData()
     }
 
     var renderTable = function(data) {

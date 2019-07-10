@@ -76,6 +76,11 @@ async function generateCRMList(fieldObj) {
             let temp = await renderFilePromise(CRM_LIST_QUERY_OPTION_PATH, { querySelectOptionKey, querySelectOptionValue })
             optionsHtml += temp
         }
+        // return options.reduce((squeen, item) => {
+        //     return squeen.then(()=>{
+                
+        //     })
+        // }, Promise.resolve()).then(()=>{})
         const selectHtml = await renderFilePromise(CRM_LIST_QUERY_SELECT_PATH, { 
             querySelectKey,
             querySelectValue,
